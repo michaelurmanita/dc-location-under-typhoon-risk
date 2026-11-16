@@ -39,13 +39,17 @@ PAUSE = 2   # seconds after every request to PSA's server
 
 
 def main():
+    # Build guide, Step 0.
     os.makedirs(RAW, exist_ok=True)
     req = urllib.request.Request(GEONAMES, headers=HEADERS)
     r = urllib.request.urlopen(req, timeout=60)
     data = r.read()
-    print(r.status, len(data))
-    # Build guide, Step 0.
-    pass
+    path = os.path.join(RAW, "PH.zip")
+    with open(path, "wb") as f:
+        f.write(data)
+    print(f"{path} {len(data)}")
+
+
 
 
 if __name__ == "__main__":
