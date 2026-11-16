@@ -41,6 +41,8 @@ PAUSE = 2   # seconds after every request to PSA's server
 def main():
     # Build guide, Step 0.
     os.makedirs(RAW, exist_ok=True)
+
+    #GeoNames
     req = urllib.request.Request(GEONAMES, headers=HEADERS)
     r = urllib.request.urlopen(req, timeout=60)
     data = r.read()
@@ -48,6 +50,17 @@ def main():
     with open(path, "wb") as f:
         f.write(data)
     print(f"{path} {len(data)}")
+
+    #IBTrACS
+    #plus gzip -- refer to the readings above for the gzip.compress() function, which takes a bytes object and returns a bytes object.
+    req = urllib.request.Request(IBTRACS, headers=HEADERS)
+    r = urllib.request.urlopen(req, timeout=60)
+    data = r.read()
+    path = os.path.join(RAW, "ibtracs.WP.list.v04r01.csv.gz")
+    with open(path, "wb") as f:
+        f.write(gzip.compress(data, compresslevel=9, mtime=0))
+    print(f"{path} {len(data)} {r.headers.get('Last-Modified')} {data.count(b'\n')} {os.path.getsize(path)}")
+    #PSA
 
 
 
