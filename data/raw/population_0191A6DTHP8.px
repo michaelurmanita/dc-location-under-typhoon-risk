@@ -1,0 +1,222 @@
+CHARSET="ANSI";
+AXIS-VERSION="2010";
+CODEPAGE="iso-8859-15";
+LANGUAGE="en";
+CREATION-DATE="20260807 09:00";
+DECIMALS=1;
+SHOWDECIMALS=0;
+MATRIX="1A6DTHP8";
+COPYRIGHT=NO;
+SUBJECT-CODE="1A";
+SUBJECT-AREA="Population and Migration";
+DESCRIPTION="Total Population, Household Population, Number of Households and Average Household Size by Region, Province, and Highly Urbanized City: Philippines, 2024";
+TITLE="Total Population, Household Population, Number of Households and Average Household Size by Region, Province, and Highly Urbanized City: Philippines, 2024 by Geographic Location and Parameter";
+CONTENTS="Total Population, Household Population, Number of Households and Average Household Size by Region, Province, and Highly Urbanized City: Philippines, 2024";
+STUB="Geographic Location";
+HEADING="Parameter";
+VALUES("Geographic Location")="Philippines a","..National Capital Region (NCR)","....City of Caloocan","....City of Las Piñas","....City of Makati 1/","....City of Malabon","....City of Mandaluyong","....City of Manila","....City of Marikina","....City of Muntinlupa",
+"....City of Navotas","....City of Parañaque","....Pasay City","....City of Pasig","....Quezon City","....City of San Juan","....City of Taguig 2/","....City of Valenzuela","....Pateros","..Cordillera Administrative Region (CAR)","....Abra","....Apayao",
+"....Benguet *","....City of Baguio","....Ifugao","....Kalinga","....Mountain Province","..Region I (Ilocos Region)","....Ilocos Norte","....Ilocos Sur","....La Union","....Pangasinan","..Region II (Cagayan Valley)","....Batanes","....Cagayan",
+"....Isabela","....Nueva Vizcaya","....Quirino","..Region III (Central Luzon)","....Aurora","....Bataan","....Bulacan","....Nueva Ecija","....Pampanga *","....City of Angeles","....Tarlac","....Zambales *","....City of Olongapo",
+"..Region IV-A (CALABARZON)","....Batangas","....Cavite","....Laguna","....Quezon *","....City of Lucena","....Rizal","..MIMAROPA Region","....Marinduque","....Occidental Mindoro","....Oriental Mindoro","....Palawan *","....City of Puerto Princesa",
+"....Romblon","..Region V (Bicol Region)","....Albay","....Camarines Norte","....Camarines Sur","....Catanduanes","....Masbate","....Sorsogon","..Region VI (Western Visayas)","....Aklan","....Antique","....Capiz","....Guimaras","....Iloilo *",
+"....City of Iloilo","..Negros Island Region (NIR) 3/","....Negros Occidental 4/*","....City of Bacolod 4/","....Negros Oriental 5/","....Siquijor 5/","..Region VII (Central Visayas)","....Bohol","....Cebu *","....City of Cebu","....City of Lapu-Lapu",
+"....City of Mandaue","..Region VIII (Eastern Visayas)","....Biliran","....Eastern Samar","....Leyte *","....City of Tacloban","....Northern Samar","....Samar","....Southern Leyte","..Region IX (Zamboanga Peninsula)","....Zamboanga del Norte",
+"....Zamboanga del Sur *","....City of Zamboanga","....Zamboanga Sibugay","....City of Isabela (Not a Province) **","....Sulu 6/","..Region X (Northern Mindanao)","....Bukidnon","....Camiguin","....Lanao del Norte *","....City of Iligan",
+"....Misamis Occidental","....Misamis Oriental *","....City of Cagayan De Oro","..Region XI (Davao Region)","....Davao de Oro","....Davao del Norte","....Davao del Sur *","....City of Davao","....Davao Occidental","....Davao Oriental",
+"..Region XII (SOCCSKSARGEN)","....Cotabato","....Sarangani","....South Cotabato *","....City of General Santos","....Sultan Kudarat","..Region XIII (Caraga)","....Agusan del Norte","....City of Butuan","....Agusan del Sur","....Dinagat Islands",
+"....Surigao del Norte","....Surigao del Sur","..Bangsamoro Autonomous Region In Muslim Mindanao (BARMM)","....Basilan","....Lanao del Sur","....Maguindanao del Norte 7/","....Maguindanao del Sur 7/","....Tawi-Tawi","....Special Geographic Area 8**";
+VALUES("Parameter")="Total Population";
+CODES("Geographic Location")="0000000000","1300000000","1380100000","1380200000","1380300000","1380400000","1380500000","1380600000","1380700000","1380800000","1380900000","1381000000","1381100000","1381200000","1381300000","1381400000","1381500000","1381600000","1381701000",
+"1400000000","1400100000","1408100000","1401100000","1430300000","1402700000","1403200000","1404400000","0100000000","0102800000","0102900000","0103300000","0105500000","0200000000","0200900000","0201500000","0203100000","0205000000","0205700000",
+"0300000000","0307700000","0300800000","0301400000","0304900000","0305400000","0330100000","0306900000","0307100000","0331400000","0400000000","0401000000","0402100000","0403400000","0405600000","0431200000","0405800000","1700000000","1704000000",
+"1705100000","1705200000","1705300000","1731500000","1705900000","0500000000","0500500000","0501600000","0501700000","0502000000","0504100000","0506200000","0600000000","0600400000","0600600000","0601900000","0607900000","0603000000","0631000000",
+"1800000000","1804500000","1830200000","1804600000","1806100000","0700000000","0701200000","0702200000","0730600000","0731100000","0731300000","0800000000","0807800000","0802600000","0803700000","0831600000","0804800000","0806000000","0806400000",
+"0900000000","0907200000","0907300000","0931700000","0908300000","0990100000","0906600000","1000000000","1001300000","1001800000","1003500000","1030900000","1004200000","1004300000","1030500000","1100000000","1108200000","1102300000","1102400000",
+"1130700000","1108600000","1102500000","1200000000","1204700000","1208000000","1206300000","1230800000","1206500000","1600000000","1600200000","1630400000","1600300000","1608500000","1606700000","1606800000","1900000000","1900700000","1903600000",
+"1908700000","1908800000","1907000000","1999900000";
+LAST-UPDATED="20260807 09:00";
+UNITS="Persons and Households";
+CONTACT="Population and Housing Census Division#National Censuses Service#Philippine Statistics Authority (PSA)#19th Floor, PSA Headquarters, PSA Complex, East Ave., Diliman, Quezon City, Philippines 1101#Email Address: phcd.staff@psa.gov.ph";
+SOURCE="Philippine Statistics Authority, 2024 Census of Population";
+NOTEX="<strong>Definition:</strong>#Total population defines as the sum of the household population and the institutional population, covering all persons living within a specific territory at a given reference time, including Filipinos in embassies or missions"
+" abroad.#Household Population: All persons who are members of a private household, meaning a person or group of persons sleeping in the same housing unit with common arrangements for food preparation and consumption. #Institutional Population: Persons li"
+"ving in institutional living quarters (ILQs) such as penal/corrective institutions, dormitories, hotels, military camps, or welfare facilities.#Household is defined as a social unit consisting of a person or a group of persons who sleep in the same housi"
+"ng unit and have a common arrangement in the preparation and consumption of food.#Average Household Size is defined as the average number of persons residing in a household, obtained by dividing the household population by the number of households.##<str"
+"ong>Method of Computation:</strong> Average Household Size is calculated by dividing the total household population by the total number of households.##<strong>Source of Basic Data:</strong> 2024 Census of Population##<strong>Level of Disaggregation:</st"
+"rong> Region, Province and Highly Urbanized City##<strong>Note/s:</strong>##*    Population counts for the provinces exclude the counts of Highly Urbanized Cities.#** Not a Province/HUC#a/  Population counts for the regions do not add up to the national "
+"total. Includes 1,708 Filipinos in Philippine embassies, consulates, and mission abroad.#1/ Excludes 10 barangays transferred to the City of Taguig, in accordance with the Supreme Court decision in General Register (GR) 235316 dated 01 December 2021.#2/ "
+"Includes 10 barangays transferred from the City of Makati, in accordance with the Supreme Court decision in GR 235316 dated 01 December 2021.#3/  Re-established into a region under Republic Act (RA) No. 12000 dated 11 June 2024.#4/ Transferred province u"
+"nder RA No. 12000; taken from Region VI - Western Visayas.#5/ Transferred province under RA No. 12000; taken from Region VII - Central Visayas.#6/ Reassigned from BARMM to Region IX under Executive Order No. 91, dated July 30, 2025, per a Supreme Court r"
+"uling on September 9, 2024.#7/ Created into a province through the division of the Province of Maguindanao under RA No. 11550; ratified on 17 September 2022.#8/ Renamed from Interim Province; comprised of eight newly created municipalities under the Bang"
+"samoro Autonomy Act Nos. 41 to 48 dated 15 September 2022; ratified on 13 April 2024.";
+VALUENOTE("Geographic Location","Philippines a")="a";
+VALUENOTE("Geographic Location","....City of Makati 1/")="1/";
+VALUENOTE("Geographic Location","....City of Taguig 2/")="2/";
+VALUENOTE("Geographic Location","....Benguet *")="*";
+VALUENOTE("Geographic Location","....Pampanga *")="*";
+VALUENOTE("Geographic Location","....Zambales *")="*";
+VALUENOTE("Geographic Location","....Quezon *")="*";
+VALUENOTE("Geographic Location","....Palawan *")="*";
+VALUENOTE("Geographic Location","....Iloilo *")="*";
+VALUENOTE("Geographic Location","..Negros Island Region (NIR) 3/")="3/";
+VALUENOTE("Geographic Location","....Negros Occidental 4/*")="4/*";
+VALUENOTE("Geographic Location","....City of Bacolod 4/")="4/";
+VALUENOTE("Geographic Location","....Negros Oriental 5/")="5/";
+VALUENOTE("Geographic Location","....Siquijor 5/")="5/";
+VALUENOTE("Geographic Location","....Cebu *")="*";
+VALUENOTE("Geographic Location","....Leyte *")="*";
+VALUENOTE("Geographic Location","....Zamboanga del Sur *")="*";
+VALUENOTE("Geographic Location","....City of Isabela (Not a Province) **")="**";
+VALUENOTE("Geographic Location","....Sulu 6/")="6/";
+VALUENOTE("Geographic Location","....Lanao del Norte *")="*";
+VALUENOTE("Geographic Location","....Misamis Oriental *")="*";
+VALUENOTE("Geographic Location","....Davao del Sur *")="*";
+VALUENOTE("Geographic Location","....South Cotabato *")="*";
+VALUENOTE("Geographic Location","....Maguindanao del Norte 7/")="7/";
+VALUENOTE("Geographic Location","....Maguindanao del Sur 7/")="7/";
+VALUENOTE("Geographic Location","....Special Geographic Area 8**")="8**";
+NEXT-UPDATE="20310807 09:00";
+PX-SERVER="OpenSTAT";
+SURVEY="2024 Census of Population";
+UPDATE-FREQUENCY="Every Five Years";
+DESCRIPTIONDEFAULT=YES;
+DATA=
+112729484.0 
+14001751.0 
+1712945.0 
+615549.0 
+309770.0 
+389929.0 
+465902.0 
+1902590.0 
+471323.0 
+552225.0 
+252878.0 
+703245.0 
+453186.0 
+853050.0 
+3084270.0 
+134312.0 
+1308085.0 
+725173.0 
+67319.0 
+1808985.0 
+246948.0 
+126587.0 
+473190.0 
+368426.0 
+208668.0 
+235391.0 
+149775.0 
+5342453.0 
+618850.0 
+709991.0 
+825072.0 
+3188540.0 
+3777608.0 
+18937.0 
+1284676.0 
+1733048.0 
+530106.0 
+210841.0 
+12989074.0 
+240824.0 
+891440.0 
+3876806.0 
+2395816.0 
+2586446.0 
+483452.0 
+1568162.0 
+681225.0 
+264903.0 
+16933234.0 
+2994795.0 
+4573884.0 
+3687345.0 
+1980338.0 
+280331.0 
+3416541.0 
+3245446.0 
+226522.0 
+511417.0 
+919504.0 
+968795.0 
+316384.0 
+302824.0 
+6064426.0 
+1379398.0 
+604666.0 
+2063314.0 
+261169.0 
+910813.0 
+845066.0 
+4861911.0 
+634422.0 
+643173.0 
+835098.0 
+192874.0 
+2082616.0 
+473728.0 
+4904944.0 
+2680477.0 
+624787.0 
+1492038.0 
+107642.0 
+6640875.0 
+1412726.0 
+3400522.0 
+965332.0 
+497813.0 
+364482.0 
+4625929.0 
+184095.0 
+472683.0 
+1823458.0 
+259353.0 
+645789.0 
+806179.0 
+434372.0 
+5089934.0 
+1067067.0 
+1045126.0 
+1018849.0 
+661498.0 
+151297.0 
+1146097.0 
+5178326.0 
+1601902.0 
+94892.0 
+761725.0 
+368132.0 
+621993.0 
+988065.0 
+741617.0 
+5389422.0 
+783775.0 
+1143931.0 
+705129.0 
+1848947.0 
+317598.0 
+590042.0 
+4462776.0 
+1286142.0 
+580915.0 
+1010009.0 
+722059.0 
+863651.0 
+2865196.0 
+404100.0 
+385530.0 
+740531.0 
+120533.0 
+565644.0 
+648858.0 
+4545486.0 
+541947.0 
+1368137.0 
+1124811.0 
+813243.0 
+482645.0 
+214703.0 
+;

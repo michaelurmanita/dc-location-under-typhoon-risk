@@ -1,0 +1,11 @@
+psa_name,region,geonameid,geonames_name,note
+City of Manila,NCR,11395835,Capital District,"GeoNames has no ADM3 row for the City of Manila; its ADM2 row Capital District holds Manila's districts (Binondo, Ermita, Tondo and others)"
+Pateros,NCR,1694404,Municipality of Pateros,"A municipality, not a city or a province; GeoNames writes Municipality of Pateros, a prefix the rule does not strip"
+Negros Occidental,NIR,1697808,Province of Negros Occidental,GeoNames files it under Western Visayas (admin1 06); PSA lists it in NIR (note 4/)
+City of Bacolod,NIR,11778407,Bacolod City,GeoNames files it under Western Visayas (admin1 06); PSA lists it in NIR (note 4/)
+Negros Oriental,NIR,1697806,Province of Negros Oriental,GeoNames files it under Central Visayas (admin1 07); PSA lists it in NIR (note 5/)
+Siquijor,NIR,1686065,Province of Siquijor,GeoNames files it under Central Visayas (admin1 07); PSA lists it in NIR (note 5/)
+City of Isabela,Region IX,1710521,City of Isabela,"GeoNames files it under ARMM (admin1 14, with Basilan); PSA lists it under Region IX as neither a province nor an HUC (**)"
+Sulu,Region IX,1685370,Province of Sulu,GeoNames files it under ARMM (admin1 14); PSA lists it in Region IX (note 6/)
+Cotabato,Region XII,1697559,Cotabato,Two GeoNames ADM2 rows in Soccsksargen have the core name cotabato (Cotabato and Cotabato City); the rule refuses a tie and the province is meant
+Special Geographic Area,BARMM,,,No GeoNames row for the area or its eight municipalities (note 8/); left without a coordinate and excluded from the model

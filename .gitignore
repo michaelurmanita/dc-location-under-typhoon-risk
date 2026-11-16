@@ -1,0 +1,17 @@
+# The three raw sources in data/raw/ (PSA's CSV and PX files, GeoNames' PH.zip and the IBTrACS WP file gzipped, about 12 MB together)
+# ARE committed as the pinned snapshot; the SQLite file is not
+*.db
+
+# Private build notes and Claude session instructions, not part of the portfolio
+guide/
+CLAUDE.md
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# macOS and Excel temp files
+.DS_Store
+~$*.xlsx
