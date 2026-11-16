@@ -40,6 +40,10 @@ PAUSE = 2   # seconds after every request to PSA's server
 
 def main():
     os.makedirs(RAW, exist_ok=True)
+    req = urllib.request.Request(GEONAMES, headers=HEADERS)
+    r = urllib.request.urlopen(req, timeout=60)
+    data = r.read()
+    print(r.status, len(data))
     # Build guide, Step 0.
     pass
 
