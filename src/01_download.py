@@ -43,24 +43,52 @@ def main():
     os.makedirs(RAW, exist_ok=True)
 
     #GeoNames
-    req = urllib.request.Request(GEONAMES, headers=HEADERS)
-    r = urllib.request.urlopen(req, timeout=60)
-    data = r.read()
-    path = os.path.join(RAW, "PH.zip")
-    with open(path, "wb") as f:
-        f.write(data)
-    print(f"{path} {len(data)}")
+    # req = urllib.request.Request(GEONAMES, headers=HEADERS)
+    # r = urllib.request.urlopen(req, timeout=60)
+    # data = r.read()
+    # path = os.path.join(RAW, "PH.zip")
+    # with open(path, "wb") as f:
+    #     f.write(data)
+    # print(f"{path} {len(data)}")
 
     #IBTrACS
     #plus gzip -- refer to the readings above for the gzip.compress() function, which takes a bytes object and returns a bytes object.
-    req = urllib.request.Request(IBTRACS, headers=HEADERS)
+    # req = urllib.request.Request(IBTRACS, headers=HEADERS)
+    # r = urllib.request.urlopen(req, timeout=60)
+    # data = r.read()
+    # path = os.path.join(RAW, "ibtracs.WP.list.v04r01.csv.gz")
+    # with open(path, "wb") as f:
+    #     f.write(gzip.compress(data, compresslevel=9, mtime=0))
+    # print(f"{path} {len(data)} {r.headers.get('Last-Modified')} {data.count(b'\n')} {os.path.getsize(path)}")
+
+    #PSA
+    req = urllib.request.Request(PSA, headers=HEADERS)
     r = urllib.request.urlopen(req, timeout=60)
     data = r.read()
-    path = os.path.join(RAW, "ibtracs.WP.list.v04r01.csv.gz")
-    with open(path, "wb") as f:
-        f.write(gzip.compress(data, compresslevel=9, mtime=0))
-    print(f"{path} {len(data)} {r.headers.get('Last-Modified')} {data.count(b'\n')} {os.path.getsize(path)}")
-    #PSA
+    metadata = json.loads(data.decode("utf-8-sig"))
+    print(metadata["title"])
+    for var in metadata["variables"]:
+        print(f"{var['code']} {len(var['values'])}")
+    time.sleep(PAUSE)
+
+    json_query = {
+        "query": [
+            {"code": "Geographic Location", "selection": {"filter": "all", "values": ["*"]}}, 
+            {"code": "Parameter", "selection": {"filter": "item", "values": ["0"]}}
+            ], 
+        "response": {"format": "csv"}
+    }
+
+    for fmt in ["csv", "px"]:
+        req = urllib.request.Request(PSA, data=json.dumps({**json_query, "response": {"format": fmt}}).encode("utf-8"), headers=HEADERS)
+        r = urllib.request.urlopen(req, timeout=60)
+        data = r.read()
+        path = os.path.join(RAW, "population_0191A6DTHP8.{fmt}")           
+        with open(path, "wb") as f:
+            f.write(data)
+        print(f"{path} {len(data)}")
+        time.sleep(PAUSE)
+    
 
 
 
