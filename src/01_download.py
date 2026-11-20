@@ -47,7 +47,7 @@ def psa_open(body):
             raise
         print("PSA returned 403, waiting 60 seconds and retrying once")
         time.sleep(60)
-        req = urllib.request.Request(PSA, headers=BROWSER)
+        req = urllib.request.Request(PSA, data=body, headers=BROWSER)
         r = urllib.request.urlopen(req, timeout=60)
         data = r.read()
     time.sleep(PAUSE)
@@ -59,33 +59,30 @@ def main():
     os.makedirs(RAW, exist_ok=True)
 
     #GeoNames
-    # req = urllib.request.Request(GEONAMES, headers=HEADERS)
-    # r = urllib.request.urlopen(req, timeout=60)
-    # data = r.read()
-    # path = os.path.join(RAW, "PH.zip")
-    # with open(path, "wb") as f:
-    #     f.write(data)
-    # print(f"{path} {len(data)}")
+    req = urllib.request.Request(GEONAMES, headers=HEADERS)
+    r = urllib.request.urlopen(req, timeout=60)
+    data = r.read()
+    path = os.path.join(RAW, "PH.zip")
+    with open(path, "wb") as f:
+        f.write(data)
+    print(f"{path} {len(data)}")
 
     #IBTrACS
     #plus gzip -- refer to the readings above for the gzip.compress() function, which takes a bytes object and returns a bytes object.
-    # req = urllib.request.Request(IBTRACS, headers=HEADERS)
-    # r = urllib.request.urlopen(req, timeout=60)
-    # data = r.read()
-    # path = os.path.join(RAW, "ibtracs.WP.list.v04r01.csv.gz")
-    # with open(path, "wb") as f:
-    #     f.write(gzip.compress(data, compresslevel=9, mtime=0))
-    # print(f"{path} {len(data)} {r.headers.get('Last-Modified')} {data.count(b'\n')} {os.path.getsize(path)}")
-
-    #PSA
-    req = urllib.request.Request(PSA, headers=HEADERS)
+    req = urllib.request.Request(IBTRACS, headers=HEADERS)
     r = urllib.request.urlopen(req, timeout=60)
     data = r.read()
+    path = os.path.join(RAW, "ibtracs.WP.list.v04r01.csv.gz")
+    with open(path, "wb") as f:
+        f.write(gzip.compress(data, compresslevel=9, mtime=0))
+    print(f"{path} {len(data)} {r.headers.get('Last-Modified')} {data.count(b'\n')} {os.path.getsize(path)}")
+
+    #PSA
+    data = psa_open(None)
     metadata = json.loads(data.decode("utf-8-sig"))
     print(metadata["title"])
     for var in metadata["variables"]:
         print(f"{var['code']} {len(var['values'])}")
-    time.sleep(PAUSE)
 
     json_query = {
         "query": [
@@ -96,39 +93,11 @@ def main():
     }
 
     for fmt in ["csv", "px"]:
-        req = urllib.request.Request(PSA, data=json.dumps({**json_query, "response": {"format": fmt}}).encode("utf-8"), headers=HEADERS)
-        r = urllib.request.urlopen(req, timeout=60)
-        data = r.read()
-        path = os.path.join(RAW, "population_0191A6DTHP8.{fmt}")           
+        data = psa_open(json.dumps({**json_query, "response": {"format": fmt}}).encode("utf-8"))
+        path = os.path.join(RAW, f"population_0191A6DTHP8.{fmt}")        
         with open(path, "wb") as f:
             f.write(data)
         print(f"{path} {len(data)}")
-        time.sleep(PAUSE)
-
-# # Proceeding to the HTTP error step. THIS CODE IS ASS and it will not work as intended.
-#     try:
-#         with urllib.request.urlopen(PSA, timeout=60) as r:
-#             data = r.read().decode("utf-8-sig")
-#             print("Request successful, data length:", len(data))
-
-#     except urllib.error.HTTPError as err:
-#         if err.code == 404:
-#             print("Error 404: Not Found. The requested resource could not be found.")
-#         elif err.code == 403:
-#             print("Error 403: Forbidden. Access to the requested resource is denied.")
-#             print("Waiting 60 seconds before retrying...")
-#             time.sleep(60)
-#             try:
-#                 req = urllib.request.Request(PSA, headers=BROWSER)
-#                 with urllib.request.urlopen(req, timeout=60) as r:
-#                     data = r.read().decode("utf-8-sig")
-#                     print("Retry successful, data length:", len(data))
-#             except urllib.error.HTTPError as retry_err:
-#                 print(f"Retry failed with HTTP error code: {retry_err.code}")
-#         else:
-#             print(f"HTTP error occurred: {err.code} - {err.reason}")
-
-
 
 
 if __name__ == "__main__":
