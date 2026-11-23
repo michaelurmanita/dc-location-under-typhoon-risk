@@ -45,8 +45,16 @@ def main():
     for f in sorted(os.listdir(RAW)):
         path = os.path.join(RAW, f)
         print(f"{f}: {os.path.getsize(path):,} bytes")
-    #PSA
-
+    # PSA
+    raw = open(os.path.join(RAW, CSV), "rb").read()
+    try:
+        raw.decode("utf-8")
+        print(f"{CSV} decodes as UTF-8")
+    except UnicodeDecodeError as err:
+        print(f"{CSV} is not UTF-8: fails at position {err.start} near {raw[err.start-10:err.start+10]!r}")
+    p = pd.read_csv(os.path.join(RAW, CSV), encoding="latin-1")
+    print(p.shape)
+    print(p.columns.tolist())
     pass
 
 
