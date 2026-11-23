@@ -41,8 +41,10 @@ MARKER = r"\s+(\d+/?\*{0,2}|\*{1,2}|a)$"   # PSA's footnote markers at the end o
 
 def main():
     # Build guide, Step 1: print each profile item listed above.
-    os.listdir(RAW)  # List all files in data/raw/ with their sizes in bytes.
-    os.path.getsize(RAW)
+    # File list
+    for f in sorted(os.listdir(RAW)):
+        path = os.path.join(RAW, f)
+        print(f"{f}: {os.path.getsize(path):,} bytes")
     #PSA
 
     pass
