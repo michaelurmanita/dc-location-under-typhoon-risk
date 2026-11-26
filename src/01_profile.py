@@ -56,12 +56,16 @@ def main():
     p = pd.read_csv(os.path.join(RAW, CSV), encoding="latin-1")
     print(p.shape)
     print(p.columns.tolist())
-    print(p["Geographic Location"].head(3))
     
     # Levels from the leading dots in the label column
     p.columns = ["label", "population"]
     p["dots"] = p["label"].str.len() - p["label"].str.lstrip(".").str.len()
-    print(p["dots"].value_counts())
+    print(p["dots"].value_counts().sort_index().to_dict())
+
+    # Footnote markers at the end of the labels
+    p["text"] = p["label"].str.lstrip(".")
+    p["marker"] = p["text"].str.extract(MARKER)[0]
+    print(p["marker"].value_counts().sort_index().to_dict())
     pass
 
 
