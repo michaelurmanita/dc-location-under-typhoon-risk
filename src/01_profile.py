@@ -45,6 +45,7 @@ def main():
     for f in sorted(os.listdir(RAW)):
         path = os.path.join(RAW, f)
         print(f"{f}: {os.path.getsize(path):,} bytes")
+
     # PSA
     raw = open(os.path.join(RAW, CSV), "rb").read()
     try:
@@ -55,6 +56,12 @@ def main():
     p = pd.read_csv(os.path.join(RAW, CSV), encoding="latin-1")
     print(p.shape)
     print(p.columns.tolist())
+    print(p["Geographic Location"].head(3))
+    
+    # Levels from the leading dots in the label column
+    p.columns = ["label", "population"]
+    p["dots"] = p["label"].str.len() - p["label"].str.lstrip(".").str.len()
+    print(p["dots"].value_counts())
     pass
 
 
