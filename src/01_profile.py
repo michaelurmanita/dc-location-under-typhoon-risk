@@ -66,6 +66,19 @@ def main():
     p["text"] = p["label"].str.lstrip(".")
     p["marker"] = p["text"].str.extract(MARKER)[0]
     print(p["marker"].value_counts().sort_index().to_dict())
+
+    # Totals and the smallest and largest entries
+    # National total, sum of regions, difference, sum of four-dot entries
+    national_total = p.loc[p["dots"] == 0, "population"].iloc[0]
+    region_total = p.loc[p["dots"] == 2, "population"].sum()
+    difference = national_total - region_total
+    four_dot_total = p.loc[p["dots"] == 4, "population"].sum()
+    four_dot_entries = p.loc[p["dots"] == 4, ["text", "population"]].sort_values("population")
+    smallest = four_dot_entries.head(3)
+    largest = four_dot_entries.tail(3).iloc[::-1]  # reverse the order of the last three rows to show largest first
+    print(f"Summary of Total Values:\n National: {national_total:,}\n Regional: {region_total:,}\n Difference: {difference:,}\n Entries (Four Dots): {four_dot_total:,}")
+    print(f"Smallest Four-Dot Entries:\n{smallest.to_string(index=False)}")
+    print(f"Largest Four-Dot Entries:\n{largest.to_string(index=False)}")
     pass
 
 
