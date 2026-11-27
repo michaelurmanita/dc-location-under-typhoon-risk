@@ -79,6 +79,13 @@ def main():
     print(f"Summary of Total Values:\n National: {national_total:,}\n Regional: {region_total:,}\n Difference: {difference:,}\n Entries (Four Dots): {four_dot_total:,}")
     print(f"Smallest Four-Dot Entries:\n{smallest.to_string(index=False)}")
     print(f"Largest Four-Dot Entries:\n{largest.to_string(index=False)}")
+
+    # PX file: source and last update
+    px = open(os.path.join(RAW, PX), "r", encoding="latin-1").read()
+    result_source = re.search(r'SOURCE="([^"]*)"', px).group(1)
+    print(f"{PX} SOURCE: {result_source}")
+    result_last_updated = re.search(r'LAST-UPDATED="([^"]*)"', px).group(1)
+    print(f"{PX} LAST-UPDATED: {result_last_updated}")
     pass
 
 
