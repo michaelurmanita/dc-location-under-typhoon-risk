@@ -47,7 +47,8 @@ def main():
         print(f"{f}: {os.path.getsize(path):,} bytes")
 
     # PSA
-    raw = open(os.path.join(RAW, CSV), "rb").read()
+    with open(os.path.join(RAW, CSV), "rb") as f:
+        raw = f.read()
     try:
         raw.decode("utf-8")
         print(f"{CSV} decodes as UTF-8")
@@ -81,12 +82,16 @@ def main():
     print(f"Largest Four-Dot Entries:\n{largest.to_string(index=False)}")
 
     # PX file: source and last update
-    px = open(os.path.join(RAW, PX), "r", encoding="latin-1").read()
+    with open(os.path.join(RAW, PX), "r", encoding="latin-1") as f:
+        px = f.read()
     result_source = re.search(r'SOURCE="([^"]*)"', px).group(1)
     print(f"{PX} SOURCE: {result_source}")
     result_last_updated = re.search(r'LAST-UPDATED="([^"]*)"', px).group(1)
     print(f"{PX} LAST-UPDATED: {result_last_updated}")
-    pass
+
+    # GeoNames
+
+
 
 
 if __name__ == "__main__":
