@@ -93,6 +93,9 @@ def main():
     with zipfile.ZipFile(os.path.join(RAW, ZIP)) as z: # This will list the files inside the zip with sizes and dates
         for info in z.infolist():
             print(f"{info.filename}: {info.file_size:,} bytes, modified on {info.date_time}")
+        with z.open("PH.txt") as f:
+            ph = pd.read_csv(f, sep="\t", header=None, names=COLS, dtype=str, keep_default_na=False, quoting=3)
+            print(ph.shape)
 
 
 
