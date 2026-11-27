@@ -90,7 +90,9 @@ def main():
     print(f"{PX} LAST-UPDATED: {result_last_updated}")
 
     # GeoNames
-
+    with zipfile.ZipFile(os.path.join(RAW, ZIP)) as z: # This will list the files inside the zip with sizes and dates
+        for info in z.infolist():
+            print(f"{info.filename}: {info.file_size:,} bytes, modified on {info.date_time}")
 
 
 
