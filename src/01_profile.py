@@ -97,13 +97,6 @@ def main():
             ph = pd.read_csv(f, sep="\t", header=None, names=COLS, dtype=str, keep_default_na=False, quoting=3)
             print(ph.shape)
 
-    # Test how the parameters will work if the header row is not present
-    with zipfile.ZipFile(os.path.join(RAW, ZIP)) as z: # This will list the files inside the zip with sizes and dates
-        with z.open("PH.txt") as f:
-            ph_test = pd.read_csv(f, sep="\t", dtype=str, keep_default_na=False, quoting=3)
-            print(ph_test.shape)
-            print(ph_test.columns.tolist()[:5])  # Print first 5 columns to see if they match expected names
-
 
 if __name__ == "__main__":
     main()
