@@ -96,6 +96,17 @@ def main():
         with z.open("PH.txt") as f:
             ph = pd.read_csv(f, sep="\t", header=None, names=COLS, dtype=str, keep_default_na=False, quoting=3)
             print(ph.shape)
+            # Filtering out administrative levels based on feature_code
+            is_adm = ph["feature_code"].str
+            print(f)
+            adm1 = (ph["feature_code"] == "ADM1")
+            adm2 = (ph["feature_code"] == "ADM2")
+            adm3 = (ph["feature_code"] == "ADM3")
+            print(f"Counts of ADM1 rows: {adm1.value_counts()}, ADM2 rows: {adm2.value_counts()}, ADM3 rows: {adm3.value_counts()}")
+
+            # Latest modification date
+            last_mod_date = ph["modification_date"].max()
+            print(f"Latest modification date in PH.txt: {last_mod_date}")
 
 
 if __name__ == "__main__":
